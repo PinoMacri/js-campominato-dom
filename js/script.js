@@ -41,6 +41,7 @@ for (let i = 1; i <= 100; i++) {
     cellaUtilizzoUno.append(i)
     //* Coloro le Celle al Click & Le rendo inutilizzabili al secondo Click : 
     cellaUtilizzoUno.addEventListener("click", function () {
+        verificaVittoria()
         cellaUtilizzoUno.disabled = true
         ++counter
         //*Verifico se l'utente calpesta una bomba
@@ -65,8 +66,16 @@ for (let i = 1; i <= 16; i++) {
     extractedNumber.push(cellNumber)
 }
 //* Vedo la mia blacklist di numeri estratti
-console.log(extractedNumber)
+////console.log(extractedNumber)
 //*--------------------------------------------*/
 function rigioca () {
     location.reload()
+}
+let conta = 0
+function verificaVittoria () {
+conta++
+if (conta == 84 ) {
+    risultato.innerText="Hai Vinto, Complimenti!"
+    popup.classList.add("activeDue")
+}
 }
